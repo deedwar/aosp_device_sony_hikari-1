@@ -30,7 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 PRODUCT_NAME := full_hikari
 PRODUCT_DEVICE := hikari
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := Xperia S
+PRODUCT_MODEL := Xperia Acro S
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
