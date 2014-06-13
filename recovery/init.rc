@@ -7,6 +7,7 @@ on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
+    export EXT_STORAGE /sd-ext
 
     symlink /system/etc /etc
 
@@ -41,6 +42,7 @@ on boot
 
 on post-fs
     mount vfat /dev/block/mmcblk0p15 /sdcard
+    mount vfat /dev/block/mmcblk1p1 /sd-ext
 
 service ueventd /sbin/ueventd
     critical

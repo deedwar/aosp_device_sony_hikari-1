@@ -18,7 +18,7 @@
 BUILD_TARGET := normal
 
 # overlay
-DEVICE_PACKAGE_OVERLAYS += device/sony/nozomi/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/hikari/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -33,8 +33,8 @@ PRODUCT_PACKAGES += \
 
 # Post recovery script
 PRODUCT_COPY_FILES += \
-    device/sony/nozomi/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/sony/nozomi/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh
+    device/sony/hikari/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    device/sony/hikari/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh
 
 # Device specific part for two-stage boot
 PRODUCT_COPY_FILES += \

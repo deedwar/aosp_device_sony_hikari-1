@@ -20,8 +20,8 @@ uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
-MKELF := device/sony/nozomi/tools/mkelf.py
-INITSH := device/sony/nozomi/combinedroot/init.sh
+MKELF := device/sony/hikari/tools/mkelf.py
+INITSH := device/sony/hikari/combinedroot/init.sh
 BOOTREC_DEVICE := $(PRODUCT_OUT)/recovery/bootrec-device
 
 INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
@@ -44,7 +44,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(uncompressed_ramdisk) $(r
 
 	$(hide) $(MKBOOTFS) $(PRODUCT_OUT)/combinedroot/ > $(PRODUCT_OUT)/combinedroot.cpio
 	$(hide) cat $(PRODUCT_OUT)/combinedroot.cpio | gzip > $(PRODUCT_OUT)/combinedroot.fs
-	$(hide) python $(MKELF) -o $@ $(PRODUCT_OUT)/kernel@0x40208000 $(PRODUCT_OUT)/combinedroot.fs@0x41500000,ramdisk vendor/sony/nozomi/proprietary/boot/RPM.bin@0x20000,rpm
+	$(hide) python $(MKELF) -o $@ $(PRODUCT_OUT)/kernel@0x40208000 $(PRODUCT_OUT)/combinedroot.fs@0x41500000,ramdisk vendor/sony/hikari/proprietary/boot/RPM.bin@0x20000,rpm
 
 	$(hide) ln -f $(INSTALLED_BOOTIMAGE_TARGET) $(PRODUCT_OUT)/boot.elf
 
@@ -53,6 +53,6 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 	$(recovery_ramdisk) \
 	$(recovery_kernel)
 	@echo ----- Making recovery image ------
-	$(hide) python $(MKELF) -o $@ $(PRODUCT_OUT)/kernel@0x40208000 $(PRODUCT_OUT)/ramdisk-recovery.img@0x41500000,ramdisk vendor/sony/nozomi/proprietary/boot/RPM.bin@0x20000,rpm
+	$(hide) python $(MKELF) -o $@ $(PRODUCT_OUT)/kernel@0x40208000 $(PRODUCT_OUT)/ramdisk-recovery.img@0x41500000,ramdisk vendor/sony/hikari/proprietary/boot/RPM.bin@0x20000,rpm
 	@echo ----- Made recovery image -------- $@
 #	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)

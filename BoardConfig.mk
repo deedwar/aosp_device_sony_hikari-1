@@ -35,12 +35,12 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 COMMON_GLOBAL_CFLAGS += -DLEGACY_BLOB_COMPATIBLE
 
 # kernel
-TARGET_KERNEL_CONFIG := fuji_nozomi_defconfig
+TARGET_KERNEL_CONFIG := fuji_hikari_defconfig
 TARGET_KERNEL_SOURCE := kernel/nozomi
 
 # display
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/sony/nozomi/config/egl.cfg
+BOARD_EGL_CFG := device/sony/hikari/config/egl.cfg
 
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
@@ -53,7 +53,7 @@ BOARD_USES_ALSA_AUDIO := true
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/sony/nozomi/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/sony/hikari/bluetooth
 
 # sensor
 BOARD_USES_GENERIC_INVENSENSE := false
@@ -112,7 +112,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 # TWRP
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
-TARGET_RECOVERY_INITRC := device/sony/nozomi/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/sony/hikari/recovery/init.rc
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -121,11 +121,11 @@ TW_NO_USB_STORAGE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p15
 
-TARGET_RECOVERY_FSTAB := device/sony/nozomi/recovery/fstab.semc
+TARGET_RECOVERY_FSTAB := device/sony/hikari/recovery/fstab.semc
 RECOVERY_FSTAB_VERSION := 2
 
-TARGET_OTA_ASSERT_DEVICE := LT26,LT26i,LT26ii,nozomi
+TARGET_OTA_ASSERT_DEVICE := LT26,LT26i,LT26ii,hikari
 
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/nozomi/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/hikari/custombootimg.mk
 
--include vendor/sony/nozomi/BoardConfigVendor.mk
+-include vendor/sony/hikari/BoardConfigVendor.mk
