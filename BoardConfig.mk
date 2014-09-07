@@ -124,7 +124,7 @@ BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p15
 TARGET_RECOVERY_FSTAB := device/sony/hikari/recovery/fstab.semc
 RECOVERY_FSTAB_VERSION := 2
 
-TARGET_OTA_ASSERT_DEVICE := LT26,LT26i,LT26ii,hikari
+TARGET_OTA_ASSERT_DEVICE := LT26w,hikari
 
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/hikari/custombootimg.mk
 
